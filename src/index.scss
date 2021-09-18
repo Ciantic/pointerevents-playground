@@ -53,13 +53,17 @@ code {
 
 pre {
     position: fixed;
-    left: 1em;
+    left: 0;
     right: 0;
     // width: 35%;
-    bottom: 1em;
+    bottom: 0;
+    padding: 1em;
     // overflow: hidden;
     background: rgba(255, 255, 255, 0.8);
     pointer-events: none;
+    z-index: 3;
+    display: block;
+    margin: 0;
 }
 
 label {
