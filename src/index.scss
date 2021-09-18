@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 1em;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+        "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.app {
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+.test-area {
+    display: block;
+    padding-top: 100%;
+    background: #000;
+    color: #fff;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    margin-top: 1em;
+    position: relative;
+    > .text {
+        position: absolute;
+        $p: 2em;
+        top: $p;
+        left: $p;
+        right: $p;
+        bottom: $p;
+        // This is required, otherwise it will interfere with offset coordinates
+        pointer-events: none;
+    }
+    > .pointer {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        width: 3em;
+        height: 3em;
+        transform: translateX(-1.5em) translateY(-1.5em);
+        background: red;
+        // This is required, otherwise it will interfere with offset coordinates
+        pointer-events: none;
+    }
+}
+
+pre {
+    position: fixed;
+    left: 1em;
+    right: 0;
+    // width: 35%;
+    bottom: 1em;
+    // overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
+label {
+    display: block;
+    position: relative;
+    input[type="checkbox"] {
+        width: 4em;
+        height: 4em;
+        margin: 0;
+        vertical-align: middle;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 2px solid black;
+        background: none;
+        // appearance: none;
+    }
+    min-height: 4em;
+    padding-left: 4em;
+    // padding-top: 1.1em;
+}
+
+code {
+    background: #efefef;
+    display: inline-block;
+    padding: 0 0.2em;
+}
