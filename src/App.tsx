@@ -98,7 +98,7 @@ const App: Component = () => {
                 when hold pressing. It's notable that iOS selects the text <em>below</em> the
                 element. In this test it's the title "Notes" and <b>not</b> the text underneath your
                 finger.{" "}
-                <a href="https://www.youtube.com/watch?v=cYzfboD5PaE">
+                <a target="_blank" href="https://www.youtube.com/watch?v=cYzfboD5PaE">
                     Tested on 2021-09-18 with Safari 14.8, on iPad.
                 </a>{" "}
                 Notice that CSS properties <code>touch-action: none</code>,{" "}
@@ -109,6 +109,14 @@ const App: Component = () => {
                 2. Set capture seems rather meaningless on touch screens of iOS and Android. However
                 on desktop mouse with Google Chrome it seems necessity if you want to be able to pan
                 a view or drag a slider naturally.
+            </p>
+            <p>
+                3. iOS has rather annoying bug: when using the four finger gesture to switch
+                application,{" "}
+                <a target="_blank" href="https://www.youtube.com/watch?v=pDGB4Hr9tKI">
+                    the pointerup or pointerleave is never triggered
+                </a>
+                . Tested on 2021-09-18 with Safari 14.8, on iPad.
             </p>
         </div>
     );
