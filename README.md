@@ -1,5 +1,7 @@
 ## Usage
 
+[Try the 🎪 playground by clicking here](https://ciantic.github.io/pointerevents-playground/)
+
 ### `npm dev` or `npm start`
 
 Runs the app in the development mode.<br>
