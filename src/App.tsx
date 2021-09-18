@@ -97,10 +97,13 @@ const App: Component = () => {
                 1. Handling <code>touchstart</code> prevents iOS from triggering "text selection"
                 when hold pressing. It's notable that iOS selects the text <em>below</em> the
                 element. In this test it's the title "Notes" and <b>not</b> the text underneath your
-                finger. Tested on 2021-09-18 with Safari 14.8, on iPad. Notice that CSS properties{" "}
-                <code>touch-action: none</code>, <code>user-select: none</code> or{" "}
-                <code>-webkit-user-select: none</code> did NOT work. It also required the touchstart
-                handling.
+                finger.{" "}
+                <a href="https://www.youtube.com/watch?v=cYzfboD5PaE">
+                    Tested on 2021-09-18 with Safari 14.8, on iPad.
+                </a>{" "}
+                Notice that CSS properties <code>touch-action: none</code>,{" "}
+                <code>user-select: none</code> or <code>-webkit-user-select: none</code> did NOT
+                work. It also required the touchstart handling.
             </p>
             <p>
                 2. Set capture seems rather meaningless on touch screens of iOS and Android. However

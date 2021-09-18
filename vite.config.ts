@@ -3,9 +3,11 @@ import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
     plugins: [solidPlugin()],
+    base: "./",
     build: {
         target: "esnext",
         polyfillDynamicImport: false,
+        outDir: "docs",
     },
     server: {
         host: "0.0.0.0",
