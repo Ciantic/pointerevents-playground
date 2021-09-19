@@ -10,8 +10,12 @@ export type Pointer = Immutable<{
     id: string;
     buttons: number;
     type: string;
+    pressure: number;
+    tangentialPressure: number;
     tilt: { x: number; y: number };
     page: { x: number; y: number };
+    twist: number;
+    width: number;
     offset: { x: number; y: number };
     events: string[];
 }>;
@@ -87,8 +91,12 @@ export function createPointerCache(init?: PointerCache) {
                 id: k,
                 buttons: e.buttons,
                 type: e.pointerType,
+                pressure: e.pressure,
+                tangentialPressure: e.tangentialPressure,
                 tilt: { x: e.tiltX, y: e.tiltY },
                 page: { x: e.pageX, y: e.pageY },
+                twist: e.twist,
+                width: e.width,
                 offset: { x: e.offsetX, y: e.offsetY },
                 events: e.type !== "pointermove" ? [...events, e.type] : events,
             });
