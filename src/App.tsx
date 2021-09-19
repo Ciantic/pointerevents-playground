@@ -111,9 +111,9 @@ const App: Component = () => {
                 work. It also required the touchstart handling.
             </p>
             <p>
-                2. Set capture seems rather meaningless on touch screens of iOS and Android. However
-                on desktop mouse with Google Chrome it seems necessity if you want to be able to pan
-                a view or drag a slider naturally.
+                2. Set capture seems rather meaningless on touch inputs of iOS and Android. However
+                on iPad pencil and desktop mouse it is necessity if you want to be able to pan a
+                view or drag a slider naturally.
             </p>
             <p>
                 3. iOS has rather annoying bug: when using the four finger gesture to switch
@@ -128,8 +128,9 @@ const App: Component = () => {
                 and 90 where (0, 0) means the pencil is at orthogonal angle. Natural angle for right
                 handed person like mee seems to be about (50, 27). Pressure is between 0 and 1, on
                 comfortable pressure it was 0.09 and 0.12, but values above 0.25 felt way too heavy
-                for me. Constant values in fields: tangential 0, and twist 0. Tested on 2021-09-19
-                with Safari 14.8, on iPad.
+                for me. Notabily in order to register values outside the area you also need to{" "}
+                <code>setPointerCapture</code>, unlike with touch inputs. Constant values in fields:
+                tangential 0, and twist 0. Tested on 2021-09-19 with Safari 14.8, on iPad.
             </p>
             <p>
                 5. iPad with finger reports a buttons value of 1, width seems to go in steps: 41.68,
