@@ -116,7 +116,6 @@ export function createPointerCache(init?: PointerCache) {
 
             createComputed(() => {
                 if (removeOnLeave()) {
-                    console.log;
                     cache.clear();
                 }
             });
