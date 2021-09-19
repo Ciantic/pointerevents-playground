@@ -24,8 +24,13 @@ export function createPointerCache(init?: PointerCache) {
     const [handlePointerEvents, setHandlePointerEvents] = createSignal(false);
     const [captureOnDown, setCaptureOnDown] = createSignal(false);
     const [removeOnLeave, setRemoveOnLeave] = createSignal(true);
+    const [touchPoints, setTouchPoints] = createSignal(0);
     const ignore = (e: TouchEvent) => e.preventDefault();
+    const countTouchpoints = (e: TouchEvent) => {
+        setTouchPoints(e.touches.length);
+    };
     return {
+        touchPoints,
         handlePointerEvents,
         setHandlePointerEvents,
         removeOnLeave,
@@ -95,6 +100,11 @@ export function createPointerCache(init?: PointerCache) {
             el.addEventListener("pointerdown", this.handle);
             el.addEventListener("pointerup", this.handle);
             el.addEventListener("pointermove", this.handle);
+
+            el.addEventListener("touchstart", countTouchpoints);
+            el.addEventListener("touchcancel", countTouchpoints);
+            el.addEventListener("touchend", countTouchpoints);
+            el.addEventListener("touchmove", countTouchpoints);
 
             createComputed(() => {
                 if (removeOnLeave()) {

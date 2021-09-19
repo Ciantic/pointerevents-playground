@@ -73,6 +73,7 @@ const App: Component = () => {
                 {pointers.list().map(([id, p]) => (
                     <ShowPointer {...p} />
                 ))}
+                Legacy TouchEvent touches.length = {pointers.touchPoints()}
             </pre>
             <div ref={testArea} class="test-area">
                 <div class="text">
